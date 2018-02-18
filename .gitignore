@@ -1,3 +1,5 @@
+#pm2
+process.yml
 # Logs
 logs
 *.log
