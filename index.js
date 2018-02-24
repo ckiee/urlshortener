@@ -10,5 +10,7 @@ app.get("/", (req, res) => {
 app.get("/:id", async (req, res) => {
     let url = await r.table("urls").get(req.params.id).run();
     if (!url) res.sendStatus(404);
+    url.views++;
     res.redirect(url.url);
+    await r.table("urls").get(req.params.id).update(url).run();
 });
