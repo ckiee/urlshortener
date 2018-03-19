@@ -5,7 +5,7 @@ const r = require("rethinkdbdash")({db: "urlshortener"})
 app.listen(port, () => console.log(`Listening on port ${port}`));
 app.disable("x-powered-by");
 app.get("/", (req, res) => {
-    res.send("Hello! This is my private URL Shortener.");
+    res.redirect("https://ronthecookie.me");
 });
 app.get("/:id", async (req, res) => {
     let url = await r.table("urls").get(req.params.id).run();
