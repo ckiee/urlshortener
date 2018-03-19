@@ -14,3 +14,6 @@ app.get("/:id", async (req, res) => {
     res.redirect(url.url);
     await r.table("urls").get(req.params.id).update(url).run();
 });
+app.use((req, res) => {
+    res.sendStatus(404);
+});
