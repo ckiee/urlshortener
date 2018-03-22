@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const port = process.env.port || 3000;
-const r = require("rethinkdbdash")({db: "urlshortener"})
+const r = require("rethinkdbdash")({db: "urlshortener"});
+app.use(require("helmet")());
 app.listen(port, () => console.log(`Listening on port ${port}`));
 app.disable("x-powered-by");
 app.get("/", (req, res) => {
