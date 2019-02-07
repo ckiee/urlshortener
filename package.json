@@ -4,8 +4,10 @@
   "description": "A URL shortener.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
+    "start": "ts-node src",
+    "built": "node dist/",
+    "build": "tsc",
+    "install": "tsc"
   },
   "author": "RONTheCookie",
   "license": "MIT",
@@ -13,5 +15,11 @@
     "express": "^4.16.2",
     "helmet": "^3.12.0",
     "rethinkdbdash": "^2.3.31"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^10.12.21",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
   }
 }
